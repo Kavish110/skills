@@ -1,0 +1,28 @@
+# Minimal training config example
+model:
+  type: tiny-decoder
+  vocab_size: 1000
+  d_model: 128
+
+training:
+  epochs: 3
+  batch_size: 16
+  lr: 1e-3
+  weight_decay: 0.01
+  warmup_steps: 100
+  dataset_size: 1000
+  eval_batch_size: 32
+
+data:
+  seq_len: 32
+  dataset_path: "path/to/dataset"
+
+checkpoint:
+  output_dir: "checkpoints/"
+  checkpoint_name: "tiny_checkpoint.pt"
+
+benchmark:
+  batch_size: 2
+  seq_len: 32
+  iters: 30
+  warmup_steps: 5
